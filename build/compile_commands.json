@@ -1,0 +1,32 @@
+[
+{
+  "directory": "C:/Users/Hp/Desktop/Controlonai/Project/build",
+  "command": "C:\\PROGRA~2\\MINGW-~1\\I686-8~1.0-P\\mingw32\\bin\\I686-W~2.EXE  @CMakeFiles/opencvtest.dir/includes_CXX.rsp -g -o CMakeFiles\\opencvtest.dir\\src\\main.cpp.obj -c C:\\Users\\Hp\\Desktop\\Controlonai\\Project\\src\\main.cpp",
+  "file": "C:/Users/Hp/Desktop/Controlonai/Project/src/main.cpp",
+  "output": "CMakeFiles/opencvtest.dir/src/main.cpp.obj"
+},
+{
+  "directory": "C:/Users/Hp/Desktop/Controlonai/Project/build",
+  "command": "C:\\PROGRA~2\\MINGW-~1\\I686-8~1.0-P\\mingw32\\bin\\I686-W~2.EXE  @CMakeFiles/opencvtest.dir/includes_CXX.rsp -g -o CMakeFiles\\opencvtest.dir\\src\\video_capture.cpp.obj -c C:\\Users\\Hp\\Desktop\\Controlonai\\Project\\src\\video_capture.cpp",
+  "file": "C:/Users/Hp/Desktop/Controlonai/Project/src/video_capture.cpp",
+  "output": "CMakeFiles/opencvtest.dir/src/video_capture.cpp.obj"
+},
+{
+  "directory": "C:/Users/Hp/Desktop/Controlonai/Project/build",
+  "command": "C:\\PROGRA~2\\MINGW-~1\\I686-8~1.0-P\\mingw32\\bin\\I686-W~2.EXE  @CMakeFiles/opencvtest.dir/includes_CXX.rsp -g -o CMakeFiles\\opencvtest.dir\\src\\video_streaming.cpp.obj -c C:\\Users\\Hp\\Desktop\\Controlonai\\Project\\src\\video_streaming.cpp",
+  "file": "C:/Users/Hp/Desktop/Controlonai/Project/src/video_streaming.cpp",
+  "output": "CMakeFiles/opencvtest.dir/src/video_streaming.cpp.obj"
+},
+{
+  "directory": "C:/Users/Hp/Desktop/Controlonai/Project/build",
+  "command": "C:\\PROGRA~2\\MINGW-~1\\I686-8~1.0-P\\mingw32\\bin\\I686-W~2.EXE  @CMakeFiles/opencvtest.dir/includes_CXX.rsp -g -o CMakeFiles\\opencvtest.dir\\src\\telemetry.cpp.obj -c C:\\Users\\Hp\\Desktop\\Controlonai\\Project\\src\\telemetry.cpp",
+  "file": "C:/Users/Hp/Desktop/Controlonai/Project/src/telemetry.cpp",
+  "output": "CMakeFiles/opencvtest.dir/src/telemetry.cpp.obj"
+},
+{
+  "directory": "C:/Users/Hp/Desktop/Controlonai/Project/build",
+  "command": "C:\\PROGRA~2\\MINGW-~1\\I686-8~1.0-P\\mingw32\\bin\\I686-W~2.EXE  @CMakeFiles/opencvtest.dir/includes_CXX.rsp -g -o CMakeFiles\\opencvtest.dir\\src\\networking.cpp.obj -c C:\\Users\\Hp\\Desktop\\Controlonai\\Project\\src\\networking.cpp",
+  "file": "C:/Users/Hp/Desktop/Controlonai/Project/src/networking.cpp",
+  "output": "CMakeFiles/opencvtest.dir/src/networking.cpp.obj"
+}
+]
