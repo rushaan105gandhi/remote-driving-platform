@@ -1,7 +1,11 @@
-#include <iostream>
-using namespace std;
+#include "video_capture.h"
+#include "video_streaming.h"
+#include "telemetry.h"
+#include "networking.h"
 
-int main()
-{
-    cout<<"Hello";
+int main() {
+    // Your main application logic
+    // Initialize and run video capture, video streaming, telemetry, and networking components
+    
+    return 0;
 }
