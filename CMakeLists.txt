@@ -20,4 +20,4 @@ target_include_directories(${PROJECT_NAME} PRIVATE ${OpenCV_INCLUDE_DIRS})
 target_include_directories(${PROJECT_NAME} PRIVATE include)
 
 # Link libraries
-target_link_libraries(${PROJECT_NAME} PRIVATE ${OpenCV_LIBS})
+target_link_libraries(${PROJECT_NAME} PRIVATE ${OpenCV_LIBS} ws2_32.lib)

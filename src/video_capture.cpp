@@ -3,7 +3,8 @@
 #include <iostream>
 #include <winsock2.h>
 
-#pragma comment(lib, "ws2_32.lib") // Link against the Winsock2 library
+// Including necessary headers for network communication
+#pragma comment(lib, "ws2_32.lib") 
 
 void sendFrameOverNetwork(const cv::Mat& frame) {
     // Initialize Winsock
@@ -24,7 +25,7 @@ void sendFrameOverNetwork(const cv::Mat& frame) {
     sockaddr_in serverAddress;
     serverAddress.sin_family = AF_INET;
     serverAddress.sin_port = htons(12345); // Replace with the server's port
-    serverAddress.sin_addr.s_addr = inet_addr("your_server_ip_here"); // Replace with the server's IP address
+    serverAddress.sin_addr.s_addr = inet_addr("server_ip_address"); // Replace with the server's IP address
 
     if (connect(clientSocket, (struct sockaddr*)&serverAddress, sizeof(serverAddress)) == SOCKET_ERROR) {
         std::cerr << "Error connecting to the server\n";
@@ -34,11 +35,10 @@ void sendFrameOverNetwork(const cv::Mat& frame) {
     }
 
     // Convert the OpenCV frame to a format suitable for sending over the network
-    std::vector<uchar> encodedFrame;
-    cv::imencode(".jpg", frame, encodedFrame);
+    // You may need to serialize the frame data into a suitable format (e.g., using OpenCV's imencode)
 
     // Send the frame data
-    send(clientSocket, reinterpret_cast<char*>(encodedFrame.data()), encodedFrame.size(), 0);
+    // You'll need to implement this part based on the serialization method used
 
     // Close the socket when done
     closesocket(clientSocket);
