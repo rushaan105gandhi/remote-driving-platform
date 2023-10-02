@@ -3,8 +3,7 @@
 #include <iostream>
 #include <winsock2.h>
 
-// Including necessary headers for network communication
-#pragma comment(lib, "ws2_32.lib") 
+#pragma comment(lib, "ws2_32.lib") // Linking against the Winsock2 library
 
 void sendFrameOverNetwork(const cv::Mat& frame) {
     // Initialize Winsock
@@ -14,7 +13,7 @@ void sendFrameOverNetwork(const cv::Mat& frame) {
         return;
     }
 
-    // Create a socket and establish a connection to the server
+    // Creating socket and establishing connection to the server
     SOCKET clientSocket = socket(AF_INET, SOCK_STREAM, 0);
     if (clientSocket == INVALID_SOCKET) {
         std::cerr << "Error creating socket\n";
@@ -25,7 +24,7 @@ void sendFrameOverNetwork(const cv::Mat& frame) {
     sockaddr_in serverAddress;
     serverAddress.sin_family = AF_INET;
     serverAddress.sin_port = htons(12345); // Replace with the server's port
-    serverAddress.sin_addr.s_addr = inet_addr("server_ip_address"); // Replace with the server's IP address
+    serverAddress.sin_addr.s_addr = inet_addr("your_server_ip_here"); // Replace with the server's IP address
 
     if (connect(clientSocket, (struct sockaddr*)&serverAddress, sizeof(serverAddress)) == SOCKET_ERROR) {
         std::cerr << "Error connecting to the server\n";
@@ -34,13 +33,14 @@ void sendFrameOverNetwork(const cv::Mat& frame) {
         return;
     }
 
-    // Convert the OpenCV frame to a format suitable for sending over the network
-    // You may need to serialize the frame data into a suitable format (e.g., using OpenCV's imencode)
+    // Converting the OpenCV frame to a format suitable for sending over the network
+    std::vector<uchar> encodedFrame;
+    cv::imencode(".jpg", frame, encodedFrame);
 
-    // Send the frame data
-    // You'll need to implement this part based on the serialization method used
+    // Sending the frame data
+    send(clientSocket, reinterpret_cast<char*>(encodedFrame.data()), encodedFrame.size(), 0);
 
-    // Close the socket when done
+    // Closing the socket
     closesocket(clientSocket);
     WSACleanup();
 }
@@ -59,12 +59,12 @@ void captureVideoFeed() {
             break;
         }
 
-        // Process the frame if needed (e.g., image processing)
 
-        // Send the frame over the network
+
+        // Sending the frame over the network
         sendFrameOverNetwork(frame);
 
-        // Display the frame (for testing purposes)
+        // Displaying the frame (for testing purposes)
         cv::imshow("Video Feed", frame);
         if (cv::waitKey(1) == 27) {
             break;
